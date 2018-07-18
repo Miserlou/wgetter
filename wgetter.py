@@ -269,7 +269,7 @@ def download(link, outdir='.', chunk_size=4096):
 
     try:
         opener = ulib.build_opener(ulib.HTTPCookieProcessor(cj))
-        url = opener.open(link)
+        url = opener.open(link, timeout=30)
         fh = open(tmpfile, mode='wb')
 
         headers = url.info()
